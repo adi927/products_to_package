@@ -1,0 +1,83 @@
+﻿<Window x:Class="products_to_package.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:products_to_package"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="624" Width="1040"
+        FontFamily="Montserrat"
+        Background="#272635">
+    <Window.Resources>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#D6EEFF"/>
+            <Setter Property="Height" Value="45"/>
+            <Setter Property="Width" Value="340"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Margin" Value="640,113,0,0"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="{Binding Tag, RelativeSource={RelativeSource AncestorType=Button}}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="SortButtonStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="{Binding Tag, RelativeSource={RelativeSource AncestorType=Button}}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Label Content="Dodaj przedmioty do podróży" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50, 25, 0, 0" FontSize="40" Foreground="#FFF"/>
+        <TextBox x:Name="addTextBox"
+                 HorizontalAlignment="Left"
+                 Text="Napisz cos"
+                 VerticalAlignment="Top"
+                 Width="320"
+                 Margin="60,113,0,0"
+                 Height="45"
+                 FontSize="19"
+                 HorizontalContentAlignment="Left"
+                 VerticalContentAlignment="Center"
+                 Background="#AAADC4"
+                 Foreground="#7D7D7D">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="15"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox x:Name="countTextBox"
+                 HorizontalAlignment="Left"
+                 Text="Podaj ilość"
+                 VerticalAlignment="Top"
+                 Width="209"
+                 Margin="411,113,0,0"
+                 Height="45"
+                 FontSize="19"
+                 HorizontalContentAlignment="Left"
+                 VerticalContentAlignment="Center"
+                 Background="#AAADC4"
+                 Foreground="#7D7D7D">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="15"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <Button x:Name="addButton" Content="DODAJ" Style="{StaticResource ButtonStyle}" Tag="15" Margin="650,113,0,0" Width="150"/>
+        <Button x:Name="sortButton" Content="SORTUJ" Style="{StaticResource SortButtonStyle}" Tag="15" HorizontalAlignment="Left" Margin="830,113,0,0" VerticalAlignment="Top" Width="150" Height="45" Background="#D6EEFF" FontSize="20"/>
+    </Grid>
+</Window>
